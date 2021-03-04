@@ -2,6 +2,7 @@ package com.fidansoft.besinlerkitabi.util
 
 import android.content.Context
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -29,4 +30,9 @@ fun placeHolderYap(context : Context) : CircularProgressDrawable{
         start()
     }
 
+}
+
+@BindingAdapter("android:downloadImage")
+fun downloadImage(view : ImageView, url : String?){
+    view.gorselIndir(url, placeHolderYap(view.context))
 }
